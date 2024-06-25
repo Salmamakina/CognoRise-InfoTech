@@ -36,9 +36,32 @@ public class Graphic {
         panel.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
+
+        JButton playButton = new JButton("Play");
+        playButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playGame();
+            }
+        });
+        JButton cancelButtom = new JButton("Cancel");
+        cancelButtom.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+            }
+        });
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        panel.add(playButton, gbc);
+        return null;
     }
 
-    private String createMessagePanel() {
+    private void playGame() {
+    }
+
+    private Component createMessagePanel() {
+        return null;
     }
 
     private void startNewGame() {
