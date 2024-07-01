@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
 import java.util.ArrayList;
@@ -34,10 +35,11 @@ public class HangmanGame {
     }
     public void play() {
         while (wrongGuesses < HANGMAN_PICS.length - 1 && !gameWon) {
+
             System.out.println(HANGMAN_PICS[wrongGuesses]);
             System.out.println("Mot actuel: " + new String(displayArray));
             System.out.print("Entrez une lettre: ");
-            char guess = scanner.nextLine().toLowerCase().charAt(0);
+            char guess = scanner.nextLine().charAt(0);
 
             boolean guessCorrect = false;
             for (int i = 0; i < wordArray.length; i++) {
