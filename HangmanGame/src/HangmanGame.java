@@ -21,7 +21,7 @@ public class HangmanGame {
     private String word;
     private boolean gameWon;
     private int wrongGuesses;
-    public HangmanGame(){
+    public HangmanGame() {
         word = Words[random.nextInt(Words.length)];
         wordArray = word.toCharArray();
         displayArray = new char[word.length()];
@@ -31,14 +31,41 @@ public class HangmanGame {
         for (int i = 0; i < word.length(); i++) {
             displayArray[i] = '_';
         }
+    }
+    public void play() {
+        while (wrongGuesses < HANGMAN_PICS.length - 1 && !gameWon) {
+            System.out.println(HANGMAN_PICS[wrongGuesses]);
+            System.out.println("Mot actuel: " + new String(displayArray));
+            System.out.print("Entrez une lettre: ");
+            char guess = scanner.nextLine().toLowerCase().charAt(0);
 
-        while(wrongGuesses < HANGMAN_PICS.length - 1 && !gameWon){
-
+            boolean guessCorrect = false;
+            for (int i = 0; i < wordArray.length; i++) {
+                if (wordArray[i] == guess) {
+                    displayArray[i] = guess;
+                    guessCorrect = true;
+                }
             }
 
+            if (!guessCorrect) {
+                wrongGuesses++;
+            }
 
+            if (new String(displayArray).equals(word)) {
+                gameWon = true;
+            }
+        }
 
+        if (gameWon) {
+            System.out.println("Félicitations! Vous avez deviné le mot: " + word);
+        } else {
+            System.out.println(HANGMAN_PICS[HANGMAN_PICS.length - 1]);
+            System.out.println("Jeu terminé! Le mot était: " + word);
+        }
+
+        scanner.close();
     }
+
 
 
 }
