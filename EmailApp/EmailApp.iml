@@ -5,6 +5,13 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
+    <content url="jar://$MODULE_DIR$/../../javamail-1.4.7/lib/dsn.jar!/" />
+    <content url="jar://$MODULE_DIR$/../../javamail-1.4.7/lib/gimap.jar!/" />
+    <content url="jar://$MODULE_DIR$/../../javamail-1.4.7/lib/imap.jar!/" />
+    <content url="jar://$MODULE_DIR$/../../javamail-1.4.7/lib/mailapi.jar!/" />
+    <content url="jar://$MODULE_DIR$/../../javamail-1.4.7/lib/pop3.jar!/" />
+    <content url="jar://$MODULE_DIR$/../../javamail-1.4.7/lib/smtp.jar!/" />
+    <content url="jar://$MODULE_DIR$/../../javamail-1.4.7/mail.jar!/" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
